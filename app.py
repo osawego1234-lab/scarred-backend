@@ -72,7 +72,7 @@ def init_db():
                 created_at TEXT NOT NULL
             )
         """)
-
+init_db()
 
 def client_ip():
     # Uses the direct connection address. Configure trusted proxy handling separately
