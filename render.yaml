@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: scarred-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SCARRED_SECRET_KEY
+        generateValue: true
+      - key: SCARRED_ADMIN_PASSWORD
+        sync: false
+      - key: SCARRED_ALLOWED_ORIGINS
+        value: https://scarredsite01.netlify.app
